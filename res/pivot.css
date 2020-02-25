@@ -1,0 +1,45 @@
+﻿.pivot
+{
+    font-size:13px;    
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;      
+    color:#333;    
+    cursor:default;
+    *zoom:1;
+    position:relative;
+    width:10000px;
+}
+
+
+.pivot-left
+{
+    
+}
+.pivot-content
+{
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+
+.pivot-table
+{
+    position:relative;
+    text-align:left;
+    border-collapse:collapse;
+    table-layout:fixed;
+    
+}
+
+.pivot-table td
+{
+    border:solid 1px #aaa;
+    padding:3px;
+    width:100px;
+}
+
+.pivot-headercell
+{
+    background:#eee;
+    
+}

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="../src/jquery.min.js" type="text/javascript"></script>
+<script src="../src/pivot.js" type="text/javascript"></script>
+<link href="../res/pivot.css" rel="stylesheet" type="text/css" />
+<script>
+    
+    var data = [
+        { "CustomerID": "湖南", "Order": "1", "Profit": "1", "Cost": "0.9", "Date": "2007-03-01" },
+        { "CustomerID": "湖南", "Order": "2", "Profit": "1.2", "Cost": "1", "Date": "2007-03-01" },
+        { "CustomerID": "湖南", "Order": "3", "Profit": "1.2", "Cost": "1.1", "Date": "2007-03-02" },
+        { "CustomerID": "湖南", "Order": "4", "Profit": "1.7", "Cost": "1.6", "Date": "2007-03-02" },
+        { "CustomerID": "湖南", "Order": "5", "Profit": "1.9", "Cost": "1.8", "Date": "2007-03-04" },
+        { "CustomerID": "湖北", "Order": "6", "Profit": "10", "Cost": "9.9", "Date": "2007-03-02" },
+        { "CustomerID": "湖北", "Order": "8", "Profit": "10", "Cost": "10.1", "Date": "2007-03-02" },
+        { "CustomerID": "湖北", "Order": "9", "Profit": "10.7", "Cost": "10.6", "Date": "2007-03-02" },
+        { "CustomerID": "湖北", "Order": "10", "Profit": "10.9", "Cost": "10.8", "Date": "2007-03-04" },
+        { "CustomerID": "广东", "Order": "11", "Profit": "5", "Cost": "4.9", "Date": "2007-03-01" },
+        { "CustomerID": "广东", "Order": "12", "Profit": "5.4", "Cost": "5.1", "Date": "2007-03-02" },
+        { "CustomerID": "广东", "Order": "13", "Profit": "5.7", "Cost": "5.6", "Date": "2007-03-02" },
+        { "CustomerID": "广东", "Order": "14", "Profit": "5.9", "Cost": "5.8", "Date": "2007-03-04" },
+        { "CustomerID": "广东", "Order": "15", "Profit": "5.9", "Cost": "5.8", "Date": "2007-03-04" }
+    ];
+
+    //1)
+    //var columnFields = [{ field: 'CustomerID' }];
+    //var rowFields = [{ field: 'Date'}];
+
+    //2)
+  // var columnFields = [{ field: 'CustomerID' }, { field: 'Date' }, { field: 'Cost'}];
+   // var rowFields = [{ field: 'Date'}];
+    
+    //3)
+    var columnFields = [{ field: 'CustomerID' }, { field: 'Date'}];
+    var rowFields = [{ field: 'Date' }, { field: 'Cost'}];
+
+   var dataFields = [{ field: 'Profit', summaryType: 'sum'}];
+  // var dataFields = [{ field: 'Profit', summaryType: 'sum' }, { field: 'Cost', summaryType: 'sum'}];
+
+    var grid = new PivotGrid({
+        columnFields: columnFields,
+        rowFields: rowFields,
+        dataFields: dataFields,
+        data: data
+    });
+
+    grid.render(document.body);
+
+</script>
